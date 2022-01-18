@@ -7,6 +7,8 @@ type Status struct {
 	IsUp    bool
 }
 
+// Receives a slice of website addresses then check if the passed website are up or down
+// Returns a map that matches every website address to its status.
 func CheckWebsites(checker Checker, websites []string) map[string]bool {
 	statusChannel := make(chan Status)
 	statuses := make(map[string]bool)
